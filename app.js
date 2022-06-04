@@ -2,12 +2,14 @@ const express = require("express");
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const path = require("path");
+const cors = require("cors");
 
 const databasePath = path.join(__dirname, "savedtexts.db");
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 let database = null;
 
